@@ -7,11 +7,11 @@ from flask import abort, render_template, flash
 from contextlib import closing
 
 # Configuration
-DATABASE = '/tmp/flaskr.db'
+DATABASE = 'data/flaskr.db'
 DEBUG = True
 SECRET_KEY = 'development key'
-USERNAME = 'admin'
-PASSWORD = 'default'
+USERNAME = 'pmarsh2@us.ibm.com'
+PASSWORD = 'm1xology'
 
 # Create the application
 app = Flask(__name__)
