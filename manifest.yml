@@ -1,0 +1,4 @@
+---
+applications:
+- name: meta-blog
+  memory: 128M

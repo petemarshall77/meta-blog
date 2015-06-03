@@ -5,6 +5,7 @@ import sqlite3
 from flask import Flask, request, session, g, redirect, url_for
 from flask import abort, render_template, flash
 from contextlib import closing
+import os
 
 # Configuration
 DATABASE = 'data/flaskr.db'
@@ -12,6 +13,10 @@ DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = 'pmarsh2@us.ibm.com'
 PASSWORD = 'm1xology'
+
+# On Bluemix, get the port number from environment variable VCAP_APP_PORT
+# or default to 5000 on localhost
+port = int(os.getenv('VCAP_APP_PORT', 5000))
 
 # Create the application
 app = Flask(__name__)
@@ -101,4 +106,4 @@ def add_entry():
 
 # Fire it up
 if __name__ == '__main__':
-    app.run()
+           app.run(host='0.0.0.0', port=port)
