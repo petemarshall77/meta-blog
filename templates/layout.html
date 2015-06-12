@@ -5,9 +5,10 @@
   <h1>Meta Blog</h1>
   <h2>A blog about developing a blog on Bluemix</h2>
   <div class="metanav">
-  {% if not session.logged_in %}
+  {% if not session.twitter_token %}
     <a href="{{ url_for('login') }}">log in</a>
   {% else %}
+    @{{ session.twitter_handle }}
     <a href="{{ url_for('logout') }}">log out</a>
   {% endif %}
   </div>
